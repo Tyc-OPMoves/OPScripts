@@ -1,2 +1,2 @@
-# OPScripts
+# General Input
 More general script or folder with specific script
