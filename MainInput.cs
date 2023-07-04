@@ -87,17 +87,17 @@ public class MainInput : MonoBehaviour
                 _letterInput = GeneralInput;
             }
 
-            if (_letterInput != null)
+            if (_letterInput != null && _letterInput.Length > 0)
             {
-                if(_letterInput.Length > 0)
-                {
+                
                     Debug.Log("User Pressed:" + _letterInput.ToString());
                     _OnANYInput?.Invoke(_letterInput, -1);
                     _letterInput = null; //to act as a "Down" type input. If you want "Sticky Keys" that togle, you can set a bool here.
-                }
+                
             }
             //below is just specific to this game where user will ever have 6 specific slots and I do not want 7 to 0 on the keyboard to ever be an input.
-            //care that if Shift is used, below trasnform into string chars like "!,@,#,$,%" etc, so checks need to be done accordingly.
+            //care that if Shift is used, below trasnform into string chars like "!,@,#,$,%" etc, so checks need to be done accordingly. 
+            //This is also needed for this project as any power or action will have an "Empowered" form activated by Shift.
             if (_numberInput > 0 && _numberInput < 7)
             {
                 Debug.Log("User Pressed: " + _numberInput);
